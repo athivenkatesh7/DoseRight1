@@ -1,0 +1,151 @@
+#,Medicine Name,Brand,Category,Primary Use,Food Restriction
+1,Amoxicillin,Mox,Antibiotic,Bacterial infections,Avoid heavy meals
+2,Azithromycin,Azee,Antibiotic,Respiratory infections,Avoid dairy
+3,Ciprofloxacin,Ciplox,Antibiotic,"UTI, skin infections ",Avoid dairy
+4,Cefixime,Taxim-O,Antibiotic,"Typhoid, UTIs ",No restriction
+5,Paracetamol,Dolo-650,Painkiller,"Fever, mild pain ",Avoid alcohol
+6,Ibuprofen,Brufen,Painkiller,Body ache,Avoid spicy food
+7,Metformin,Glycomet,Antidiabetic,Type 2 Diabetes,Low sugar diet
+8,Pantoprazole,Pan-40,Antacid,"Acidity, GERD ",Avoid oily food
+9,Atorvastatin,Atorva,Cardiac,High cholesterol,Avoid grapefruit
+10,Becosules,Pfizer,Vitamin,Vitamin deficiency,No restriction
+11,Levothyroxine,Thyronorm,Thyroid,Hypothyroidism,Empty stomach
+12,Amlodipine,Amlovas,Cardiac,Hypertension,No restriction
+13,Telmisartan,Telma,Cardiac,High Blood Pressure,Avoid high potassium
+14,Montelukast,Singulair,Antiallergy,Asthma/Rhinitis,No restriction
+15,Glimepiride,Amaryl,Antidiabetic,Blood Sugar,No skipped meals
+16,Sertraline,Zoloft,Antidepressant,Anxiety/Depression,Avoid alcohol
+17,Losartan,Cosart,Cardiac,Hypertension,Avoid high salt
+18,Omeprazole,Omez,Antacid,GERD/Ulcers,30m before food
+19,Rosuvastatin,Rosuvas,Cardiac,Cholesterol,No restriction
+20,Clopidogrel,Clopilet,Cardiac,Blood thinner,Avoid fatty foods
+21,Sitagliptin,Januvia,Antidiabetic,Type 2 Diabetes,No restriction
+22,Gabapentin,Neurontin,Neurological,Nerve pain,Avoid alcohol
+23,Alprazolam,Restyl,Psychiatric,Anxiety/Panic,Avoid alcohol
+24,Domperidone,Domstal,Antiemetic,Nausea/Vomiting,Before meals
+25,Furosemide,Lasix,Diuretic,Edema/Fluid,Avoid high salt
+26,Doxycycline,Doxiv-S,Antibiotic,Acne/Infection,Avoid dairy
+27,Vildagliptin,Galvus,Antidiabetic,Blood Sugar,No restriction
+28,Bisoprolol,Concor,Cardiac,Heart failure,No restriction
+29,Warfarin,Coumadin,Anticoagulant,Blood clots,Avoid Vitamin K
+30,Salbutamol,Asthalin,Respiratory,Asthma/COPD,No restriction
+31,Diclofenac,Voveran,Painkiller,Joint pain/Arthritis,After meals
+32,Cetirizine,Okacet,Antihistamine,Allergies/Itching,Avoid alcohol
+33,Metoprolol,Metpure,Cardiac,Hypertension,With or after food
+34,Ramipril,Cardace,Cardiac,BP/Heart Protection,Low salt diet
+35,Spironolactone,Aldactone,Diuretic,Water retention,Avoid high potassium
+36,Prednisolone,Wysolone,Steroid,Inflammation,After meals
+37,Ranitidine,Rantac,Antacid,Heartburn,No restriction
+38,Loperamide,Imodium,Antidiarrheal,Loose motion,Stay hydrated
+39,Albendazole,Zentel,Antiparasitic,Worm infection,Fatty meal (better)
+40,Fluconazole,Forcan,Antifungal,Fungal infection,No restriction
+41,Digoxin,Lanoxin,Cardiac,Heart failure,Monitor pulse
+42,Carvedilol,Carca,Cardiac,Hypertension,With meals
+43,Escitalopram,Nexito,Antidepressant,Depression,No restriction
+44,Levetiracetam,Keppra,Antiepileptic,Seizures,No restriction
+45,Phenytoin,Epsolin,Antiepileptic,Seizures,Avoid alcohol
+46,Baclofen,Lioresal,Muscle Relaxant,Muscle spasms,Avoid alcohol
+47,Methyldopa,Alphadopa,Cardiac,BP in Pregnancy,No restriction
+48,Allopurinol,Zyloric,Antigout,High Uric acid,Plenty of water
+49,Hydrochlorothiazide,Aquazide,Diuretic,Hypertension,Take in morning
+50,Oseltamivir,Antiflu,Antiviral,Influenza,No restriction
+51,Cefuroxime,Pulmocef,Antibiotic,Infections,Take with food
+52,Nitrofurantoin,Niftran,Antibiotic,UTI,Take with milk/food
+53,Ethambutol,Combutol,Antitubercular,Tuberculosis,No restriction
+54,Pyrazinamide,PZA,Antitubercular,Tuberculosis,Drink plenty water
+55,Isoniazid,Solonex,Antitubercular,Tuberculosis,Empty stomach
+56,Tamsulosin,Urimax,Urology,Prostate (BPH),30m after meal
+57,Finasteride,Finpecia,Urology,Hair loss/BPH,No restriction
+58,Sildenafil,Viagra,Urology,Erectile Dysfunction,Avoid fatty meals
+59,Tadalafil,Megalis,Urology,ED/Prostate,No restriction
+60,Gliclazide,Diamicron,Antidiabetic,Diabetes,With breakfast
+61,Pioglitazone,Pioz,Antidiabetic,Diabetes,No restriction
+62,Dapagliflozin,Forxiga,Antidiabetic,Diabetes,Drink water
+63,Empagliflozin,Jardiance,Antidiabetic,Diabetes,No restriction
+64,Linagliptin,Trajenta,Antidiabetic,Diabetes,No restriction
+65,Enalapril,Envas,Cardiac,Hypertension,Low salt diet
+66,Verapamil,Calaptin,Cardiac,Angina/Arrhythmia,Avoid grapefruit
+67,Nifedipine,Nicardia,Cardiac,Hypertension,Avoid grapefruit
+68,Diltiazem,Dilzem,Cardiac,Angina,Before meals
+69,Isosorbide Mononitrate,Ismo,Cardiac,Chest pain,Avoid alcohol
+70,Aspirin,Ecosprin,Cardiac,Blood thinner,After meals
+71,Rivaroxaban,Xarelto,Anticoagulant,Clots,Take with food
+72,Apixaban,Eliquis,Anticoagulant,Clots,No restriction
+73,Heparin,Hepalock,Anticoagulant,Clots,Hospital use only
+74,Tranexamic Acid,Texakind,Hemostatic,Bleeding control,No restriction
+75,Desmopressin,Minirin,Hormone,Bedwetting,Limit fluid intake
+76,Hydrocortisone,Primacort,Steroid,Allergies,No restriction
+77,Dexamethasone,Decdan,Steroid,Inflammation,After meals
+78,Methylprednisolone,Medrol,Steroid,Autoimmune,After meals
+79,Fluticasone,Flomist,Steroid,Nasal allergy,No restriction
+80,Budesonide,Pulmicort,Respiratory,Asthma,Rinse mouth after
+81,Formoterol,Foracort,Respiratory,COPD,No restriction
+82,Tiotropium,Tiova,Respiratory,COPD,No restriction
+83,Acebrophylline,AB-Phylline,Respiratory,Bronchitis,After meals
+84,Ambroxol,Mucolite,Mucolytic,Cough,Plenty of fluids
+85,Guaifenesin,Benadryl,Expectorant,Chest congestion,Drink water
+86,Codeine,Corex,Antitussive,Dry cough,Avoid alcohol
+87,Dextromethorphan,Alex,Antitussive,Dry cough,No restriction
+88,Levocetirizine,Levocet,Antihistamine,Allergy,Bedtime preferred
+89,Fexofenadine,Allegra,Antihistamine,Allergy,Avoid fruit juice
+90,Loratadine,Lorfast,Antihistamine,Allergy,No restriction
+91,Promethazine,Phenergan,Antiemetic,Motion sickness,Avoid alcohol
+92,Ondansetron,Emeset,Antiemetic,Vomiting,No restriction
+93,Metoclopramide,Perinorm,Antiemetic,Gastroparesis,30m before food
+94,Sucralfate,Sucrafil,Ulcer med,Stomach ulcers,Empty stomach
+95,Lansoprazole,Lanzol,Antacid,Acidity,Before breakfast
+96,Rabeprazole,Happi,Antacid,GERD,Before breakfast
+97,Mesalamine,Mesacol,Gastro,Colitis,After meals
+98,Sulfasalazine,Saaz,Gastro,RA/Colitis,Plenty of water
+99,Ursodeoxycholic Acid,Udiliv,Liver,Gallstones,With food
+100,Silymarin,Silybon,Liver,Liver cirrhosis,After meals
+101,Lactulose,Duphalac,Laxative,Constipation,Take with water
+102,Bisacodyl,Dulcolax,Laxative,Constipation,Take at night
+103,Orlistat,Lipocut,Weight loss,Obesity,With fatty meals
+104,Valproic Acid,Encorate,Antiepileptic,Epilepsy,After meals
+105,Lamotrigine,Lamictal,Antiepileptic,Bipolar/Fits,No restriction
+106,Topiramate,Topamax,Antiepileptic,Migraine/Fits,Drink water
+107,Levodopa + Carbidopa,Syndopa,Neurological,Parkinson's,Avoid protein rich
+108,Donepezil,Donep,Neurological,Alzheimer's,At bedtime
+109,Memantine,Admenta,Neurological,Alzheimer's,No restriction
+110,Sumatriptan,Suminat,Neurological,Migraine,Take at onset
+111,Flunarizine,Sibelium,Neurological,Migraine,Take at night
+112,Amitriptyline,Tryptomer,Antidepressant,Nerve pain,Avoid alcohol
+113,Duloxetine,Symbal,Antidepressant,Anxiety/Pain,No restriction
+114,Fluoxetine,Fludac,Antidepressant,Depression/OCD,Morning dose
+115,Venlafaxine,Ventab,Antidepressant,Anxiety,With food
+116,Quetiapine,Seroquin,Antipsychotic,Schizophrenia,Avoid alcohol
+117,Olanzapine,Oleanz,Antipsychotic,Bipolar,No restriction
+118,Risperidone,Risdone,Antipsychotic,Mental health,No restriction
+119,Lithium Carbonate,Licab,Psychiatric,Bipolar,Stable salt intake
+120,Zolpidem,Stilnoct,Sedative,Insomnia,Take just before bed
+121,Melatonin,Meloset,Supplement,Sleep cycle,Nighttime
+122,Clonazepam,Clonotril,Benzodiazepine,Seizures/Anxiety,Avoid alcohol
+123,Lorazepam,Larpose,Benzodiazepine,Anxiety,Avoid alcohol
+124,Tramadol,Ultracet,Painkiller,Moderate pain,Avoid alcohol
+125,Morphine,R-Morph,Painkiller,Severe pain,Avoid alcohol
+126,Fentanyl,Trofentyl,Painkiller,Post-op pain,Hospital use
+127,Naproxen,Naprosyn,Painkiller,Arthritis pain,After meals
+128,Etoricoxib,Nucoxia,Painkiller,Bone/Joint pain,No restriction
+129,Methotrexate,Folitrax,Immunosuppressant,RA/Psoriasis,Take with Folic Acid
+130,Azathioprine,Azoran,Immunosuppressant,Transplant/RA,After meals
+131,Cyclosporine,Panimun,Immunosuppressant,Transplant,Avoid grapefruit
+132,Chloroquine,Lariago,Antimalarial,Malaria,With food
+133,Artemether + Lumefantrine,Lumerax,Antimalarial,Malaria,With fatty food
+134,Metronidazole,Flagyl,Antiprotozoal,Infections/Amoeba,Strictly no alcohol
+135,Tinidazole,Fasigyn,Antiprotozoal,Infections,Avoid alcohol
+136,Clotrimazole,Candid,Antifungal,Skin infection,External use
+137,Terbinafine,Sebifin,Antifungal,Nail/Skin fungal,No restriction
+138,Acyclovir,Acivir,Antiviral,Herpes/Shingles,Drink water
+139,Tenofovir,Tenvir,Antiviral,HIV/Hep B,With food
+140,Entecavir,Entavir,Antiviral,Hepatitis B,Empty stomach
+141,Ferrous Ascorbate,Orofer,Vitamin,Iron deficiency,Avoid tea/coffee
+142,Calcium + Vit D3,Shelcal,Vitamin,Bone health,After meals
+143,Folic Acid,Folvite,Vitamin,Anemia/Pregnancy,No restriction
+144,Vitamin B12,Neurobion,Vitamin,Nerve health,No restriction
+145,Vitamin C,Limcee,Vitamin,Immunity,No restriction
+146,Vitamin E,Evion,Vitamin,Skin/Hair,After meals
+147,Potassium Chloride,Potcl,Mineral,Hypokalemia,With food
+148,Magnesium Oxide,Mag-Ox,Mineral,Deficiency/Cramps,No restriction
+149,Zinc Sulfate,Zinconia,Mineral,Immunity/Diarrhea,Empty stomach
+150,L-Thyroxine,Eltroxin,Hormone,Thyroid,Empty stomach

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - DoseRight</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <i class="fas fa-pills"></i>
+            <span class="brand">Dose<span>Right</span></span>
+        </div>
+        <div class="nav-center">
+            <a href="{{ url_for('index') }}" class="nav-link">Scan Medicine</a>
+            <a href="{{ url_for('history') }}" class="nav-link">My History</a>
+            <a href="{{ url_for('about') }}" class="nav-link">About Us</a>
+            <a href="{{ url_for('auth.profile') }}" class="nav-link active">My Profile</a>
+        </div>
+        <div class="nav-right">
+            {% if current_user.is_authenticated %}
+            <span class="welcome-text">Welcome, {{ current_user.username }}!</span>
+            <a href="{{ url_for('auth.logout') }}" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+            {% else %}
+            <a href="{{ url_for('auth.login') }}" class="login-btn">Login</a>
+            <a href="{{ url_for('auth.signup') }}" class="signup-btn">Sign Up</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="profile-container">
+                <!-- Profile Header -->
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="profile-info">
+                        <h1>{{ user.full_name or current_user.username }}</h1>
+                        <p class="profile-email">
+                            <i class="fas fa-envelope"></i> {{ user.email }}
+                        </p>
+                        <p class="profile-joined">
+                            <i class="fas fa-calendar-alt"></i> 
+                            Member since {{ user.created_at[:10] if user.created_at else 'Recently' }}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h3>Total Scans</h3>
+                        <p class="stat-number">{{ stats.total_scans if stats else 0 }}</p>
+                        <p class="stat-label">Medicines Identified</p>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Last Scan</h3>
+                        <p class="stat-number">
+                            {% if stats and stats.last_scan %}
+                                {{ stats.last_scan }}
+                            {% else %}
+                                Never
+                            {% endif %}
+                        </p>
+                        <p class="stat-label">Most Recent Activity</p>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Account Status</h3>
+                        <p class="stat-number">Active</p>
+                        <p class="stat-label">Verified User</p>
+                    </div>
+                </div>
+
+                <!-- Account Details -->
+                <div class="account-details">
+                    <h2><i class="fas fa-user-cog"></i> Account Details</h2>
+                    
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <label><i class="fas fa-user"></i> Username</label>
+                            <p>{{ user.username }}</p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <label><i class="fas fa-envelope"></i> Email</label>
+                            <p>{{ user.email }}</p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <label><i class="fas fa-user-tag"></i> Full Name</label>
+                            <p>{{ user.full_name or 'Not set' }}</p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <label><i class="fas fa-calendar"></i> Member Since</label>
+                            <p>{{ user.created_at[:10] if user.created_at else 'Recently' }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+                    
+                    <div class="actions-grid">
+                        <a href="{{ url_for('index') }}" class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <h3>Scan Medicine</h3>
+                            <p>Identify a new medicine</p>
+                        </a>
+                        
+                        <a href="{{ url_for('history') }}" class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-history"></i>
+                            </div>
+                            <h3>View History</h3>
+                            <p>See your previous scans</p>
+                        </a>
+                        
+                        <a href="#" class="action-card" onclick="alert('Coming soon!')">
+                            <div class="action-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <h3>Notifications</h3>
+                            <p>Manage alerts</p>
+                        </a>
+                        
+                        <a href="{{ url_for('auth.logout') }}" class="action-card logout-action">
+                            <div class="action-icon">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </div>
+                            <h3>Logout</h3>
+                            <p>Sign out from all devices</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Developed by Students of Ramco Institute of Technology – RAAM Techlink Internship</p>
+            <p class="copyright">© 2024 DoseRight. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

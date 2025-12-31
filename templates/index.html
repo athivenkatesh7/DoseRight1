@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoseRight – Smart Medicine Understanding App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <i class="fas fa-pills"></i>
+            <span class="brand">Dose<span>Right</span></span>
+        </div>
+        <div class="nav-center">
+            <a href="/" class="nav-link active">Scan Medicine</a>
+            <a href="/history" class="nav-link">My History</a>
+            <a href="/about" class="nav-link">About Us</a>
+        </div>
+        <div class="nav-right">
+    {% if current_user.is_authenticated %}
+    <span class="welcome-text">Welcome, {{ current_user.username }}!</span>
+    <a href="/auth/logout" class="logout-btn">
+        <i class="fas fa-sign-out-alt"></i> Logout
+    </a>
+    {% else %}
+    <a href="/auth/login" class="login-btn">Login</a>
+    <a href="/auth/signup" class="signup-btn">Sign Up</a>
+    {% endif %}
+  
+</div>
+
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="upload-card">
+                    <div class="upload-header">
+                        <i class="fas fa-camera"></i>
+                        <h2>Upload Medicine Image</h2>
+                        <p>Take a picture of your medicine strip, bottle, or tablet</p>
+                    </div>
+                    
+                    <!-- OCR Info -->
+                    <div class="ocr-info">
+                        <h3><i class="fas fa-eye"></i> Smart Image Recognition</h3>
+                        <p><i class="fas fa-check-circle"></i> <strong>OCR Technology:</strong> Extracts text from medicine images</p>
+                        <p><i class="fas fa-check-circle"></i> <strong>AI Recognition:</strong> Identifies medicine names and brands</p>
+                        <p><i class="fas fa-check-circle"></i> <strong>Supports:</strong> Medicine strips, bottles, prescription labels</p>
+                        <p class="tip"><i class="fas fa-lightbulb"></i> <strong>Tip:</strong> For best results, upload clear images with visible text</p>
+                    </div>
+                    
+                    <div class="upload-area" id="uploadArea">
+                        <input type="file" id="imageUpload" accept="image/*" hidden>
+                        <div class="upload-placeholder" id="uploadPlaceholder">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <h3>Click to upload image</h3>
+                            <p>Supported formats: JPG, PNG, WEBP</p>
+                            <p>Max size: 5MB</p>
+                        </div>
+                        <div class="image-preview" id="imagePreview">
+                            <img id="previewImage" src="" alt="Preview">
+                            <button class="remove-btn" id="removeImage">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="upload-actions">
+                        <button class="btn-primary" id="scanBtn" disabled>
+                            <i class="fas fa-search"></i>
+                            <span>Scan Medicine</span>
+                        </button>
+                        <button class="btn-secondary" id="resetBtn">
+                            <i class="fas fa-redo"></i>
+                            <span>Reset</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works -->
+            <section class="info-section">
+                <h2>How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3>1. Upload Image</h3>
+                        <p>Take a clear picture of your medicine</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>2. AI Analysis</h3>
+                        <p>Our AI identifies the medicine name</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h3>3. Get Details</h3>
+                        <p>Receive comprehensive safety information</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                        <h3>4. Listen & Learn</h3>
+                        <p>Hear the instructions in your preferred language</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Loading Modal -->
+    <div class="modal" id="loadingModal">
+        <div class="modal-content">
+            <div class="loading-spinner"></div>
+            <h3>Scanning Medicine...</h3>
+            <p>Our AI is analyzing your image. Please wait.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Developed by Students of Ramco Institute of Technology – RAAM Techlink Internship</p>
+            <p class="copyright">© 2024 DoseRight. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Details - DoseRight</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <div class="logo">
+                    <i class="fas fa-pills"></i>
+                    <h1>Dose<span>Right</span></h1>
+                </div>
+                <a href="/" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Scan Another
+                </a>
+            </div>
+            
+            
+        </div>
+    </header>
+
+    <!-- Medicine Details -->
+    <main class="medicine-details">
+        <div class="container">
+            <!-- Medicine Header -->
+            <div class="medicine-header">
+                <div class="medicine-image">
+                    <img src="{{ medicine.image_url or url_for('static', filename='images/medicine-placeholder.jpg') }}" alt="{{ medicine.medicine_name }}">
+                </div>
+                <div class="medicine-info">
+                    <div class="medicine-title">
+                        <h2 id="medName">{{ medicine.medicine_name }}</h2>
+                        <span class="badge" id="medCategory">{{ medicine.category }}</span>
+                    </div>
+                    <p class="brand" id="medBrand">Brand: {{ medicine.brand }}</p>
+                    
+                    <!-- Detection Info -->
+                    {% if medicine.get('detection_method') %}
+                    <div class="detection-info">
+                        <p>
+                            <i class="fas fa-microscope"></i> 
+                            <strong>Detection Method:</strong> {{ medicine.detection_method }}
+                            {% if medicine.get('ocr_detected') %}
+                                <span class="ocr-success">(OCR Recognized)</span>
+                            {% endif %}
+                        </p>
+                    </div>
+                    {% endif %}
+                    
+                    <div class="action-buttons">
+                        <button class="btn-voice" id="playVoice">
+                            <i class="fas fa-volume-up"></i>
+                            <span>Listen Instructions</span>
+                        </button>
+                        <audio id="audioPlayer" controls style="display: none;"></audio>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medicine Cards Grid -->
+<div class="medicine-cards">
+    <div class="card">
+        <div class="card-header">
+            <i class="fas fa-stethoscope"></i>
+            <h3>Uses</h3>
+        </div>
+        <div class="card-content short-text">
+            <p id="medUses">{{ medicine.uses }}</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <i class="fas fa-capsules"></i>
+            <h3>Dosage</h3>
+        </div>
+        <div class="card-content short-text">
+            <p id="medDosage">{{ medicine.dosage }}</p>
+        </div>
+    </div>
+
+    <div class="card warning">
+        <div class="card-header">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h3>Precautions</h3>
+        </div>
+        <div class="card-content short-text">
+            <p id="medPrecautions">{{ medicine.precautions }}</p>
+        </div>
+    </div>
+
+    <div class="card warning">
+        <div class="card-header">
+            <i class="fas fa-exclamation-circle"></i>
+            <h3>Side Effects</h3>
+        </div>
+        <div class="card-content short-text">
+            <p id="medSideEffects">{{ medicine.side_effects }}</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <i class="fas fa-utensils"></i>
+            <h3>Food Restrictions</h3>
+        </div>
+        <div class="card-content short-text">
+            <p id="medFoodRestriction">{{ medicine.food_restriction }}</p>
+        </div>
+    </div>
+
+    <div class="card important">
+        <div class="card-header">
+            <i class="fas fa-heartbeat"></i>
+            <h3>Safety First</h3>
+        </div>
+        <div class="card-content short-text">
+            <ul>
+                <li>Always consult your doctor</li>
+                <li>Do not self-medicate</li>
+                <li>Follow prescribed dosage</li>
+                <li>Check expiry date</li>
+                <li>Keep away from children</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            <!-- Tamil Information -->
+            <div class="tamil-section" id="tamilSection" style="display: none;">
+                <h3><i class="fas fa-language"></i> தமிழில் தகவல்</h3>
+                <div class="tamil-cards">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fas fa-pills"></i>
+                            <h3>மருந்தின் பெயர்</h3>
+                        </div>
+                        <div class="card-content">
+                            <p id="tamilName">{{ medicine.tamil_data.name }}</p>
+                            <p id="tamilBrand">பிராண்ட்: {{ medicine.tamil_data.brand }}</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fas fa-stethoscope"></i>
+                            <h3>பயன்கள்</h3>
+                        </div>
+                        <div class="card-content">
+                            <p id="tamilUses">{{ medicine.tamil_data.uses }}</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fas fa-capsules"></i>
+                            <h3>மாத்திரை அளவு</h3>
+                        </div>
+                        <div class="card-content">
+                            <p id="tamilDosage">{{ medicine.tamil_data.dosage }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="disclaimer">
+                <i class="fas fa-info-circle"></i>
+                <p><strong>Disclaimer:</strong> This information is for educational purposes only. Always consult a healthcare professional for medical advice.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Modal -->
+    <div class="modal" id="loadingModal">
+        <div class="modal-content">
+            <div class="loading-spinner"></div>
+            <h3>Generating Audio...</h3>
+            <p>Please wait while we generate the voice instructions.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Developed by Students of Ramco Institute of Technology – RAAM Techlink Internship</p>
+            <p class="copyright">© 2024 DoseRight. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        // Initialize medicine data
+        const medicineData = {
+            english: {
+                name: "{{ medicine.medicine_name }}",
+                brand: "{{ medicine.brand }}",
+                category: "{{ medicine.category }}",
+                uses: "{{ medicine.uses }}",
+                dosage: "{{ medicine.dosage }}",
+                precautions: "{{ medicine.precautions }}",
+                side_effects: "{{ medicine.side_effects }}",
+                food_restriction: "{{ medicine.food_restriction }}"
+            },
+            tamil: JSON.parse('{{ medicine.tamil_data|tojson }}')
+        };
+
+        // Language toggle functionality
+        document.getElementById('langEnglish').addEventListener('click', function() {
+            document.getElementById('langEnglish').classList.add('active');
+            document.getElementById('langTamil').classList.remove('active');
+            updateLanguage('english');
+        });
+
+        document.getElementById('langTamil').addEventListener('click', function() {
+            document.getElementById('langTamil').classList.add('active');
+            document.getElementById('langEnglish').classList.remove('active');
+            updateLanguage('tamil');
+        });
+
+        function updateLanguage(lang) {
+            const data = medicineData[lang];
+            
+            if (lang === 'tamil') {
+                document.getElementById('tamilSection').style.display = 'block';
+            } else {
+                document.getElementById('tamilSection').style.display = 'none';
+            }
+            
+            // Update English fields
+            document.getElementById('medName').textContent = data.name;
+            document.getElementById('medCategory').textContent = data.category;
+            document.getElementById('medBrand').textContent = `Brand: ${data.brand}`;
+            document.getElementById('medUses').textContent = data.uses;
+            document.getElementById('medDosage').textContent = data.dosage;
+            document.getElementById('medPrecautions').textContent = data.precautions;
+            document.getElementById('medSideEffects').textContent = data.side_effects;
+            document.getElementById('medFoodRestriction').textContent = data.food_restriction;
+            
+            // Update Tamil fields
+            if (lang === 'tamil') {
+                const tamilData = medicineData.tamil;
+                document.getElementById('tamilName').textContent = tamilData.name;
+                document.getElementById('tamilBrand').textContent = `பிராண்ட்: ${tamilData.brand}`;
+                document.getElementById('tamilUses').textContent = tamilData.uses;
+                document.getElementById('tamilDosage').textContent = tamilData.dosage;
+            }
+        }
+
+        // Voice functionality
+        document.getElementById('playVoice').addEventListener('click', function() {
+            const textToSpeak = `${medicineData.english.name} is used for ${medicineData.english.uses}. Dosage: ${medicineData.english.dosage}. Precautions: ${medicineData.english.precautions}`;
+            
+            if ('speechSynthesis' in window) {
+                const speech = new SpeechSynthesisUtterance(textToSpeak);
+                speech.lang = document.getElementById('langTamil').classList.contains('active') ? 'ta-IN' : 'en-US';
+                speech.rate = 0.9;
+                speech.pitch = 1;
+                window.speechSynthesis.speak(speech);
+            } else {
+                alert('Text-to-speech is not supported in your browser.');
+            }
+        });
+    </script>
+</body>
+</html>

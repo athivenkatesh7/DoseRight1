@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - DoseRight</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <i class="fas fa-pills"></i>
+            <span class="brand">Dose<span>Right</span></span>
+        </div>
+        <div class="nav-center">
+            <a href="/" class="nav-link">Scan Medicine</a>
+            <a href="/history" class="nav-link">My History</a>
+            <a href="/about" class="nav-link active">About Us</a>
+        </div>
+        <div class="nav-right">
+    {% if current_user.is_authenticated %}
+    <span class="welcome-text">Welcome, {{ current_user.username }}!</span>
+    <a href="/auth/logout" class="logout-btn">
+        <i class="fas fa-sign-out-alt"></i> Logout
+    </a>
+    {% else %}
+    <a href="/auth/login" class="login-btn">Login</a>
+    <a href="/auth/signup" class="signup-btn">Sign Up</a>
+    {% endif %}
+</div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="about-header">
+                <h1>About DoseRight</h1>
+                <p class="tagline">Empowering Safe Medication Usage Through AI Technology</p>
+            </div>
+
+            <div class="about-content">
+                <div class="mission-section">
+                    <h2>Our Mission</h2>
+                    <p>To make medicine information accessible, understandable, and actionable for everyone, reducing medication errors and promoting safe usage through innovative technology.</p>
+                </div>
+
+                <div class="features-section">
+                    <h2>Key Features</h2>
+                    <div class="features-grid">
+                        <div class="feature">
+                            <i class="fas fa-camera"></i>
+                            <h3>Image Recognition</h3>
+                            <p>Upload medicine images for instant identification using OCR and AI</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-brain"></i>
+                            <h3>AI-Powered Insights</h3>
+                            <p>Get detailed information about uses, dosage, and precautions</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-language"></i>
+                            <h3>Bilingual Support</h3>
+                            <p>Available in English and Tamil with voice instructions</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Safety First</h3>
+                            <p>Comprehensive safety information and precautions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-section">
+                    <h2>Developed By</h2>
+                    <p>Students of Ramco Institute of Technology</p>
+                    <p class="internship">RAAM Techlink Internship Program 2024</p>
+                </div>
+
+                <div class="tech-stack">
+                    <h2>Technology Stack</h2>
+                    <div class="tech-items">
+                        <span class="tech-item">Flask</span>
+                        <span class="tech-item">Python</span>
+                        <span class="tech-item">Gemini AI</span>
+                        <span class="tech-item">FAISS</span>
+                        <span class="tech-item">OCR</span>
+                        <span class="tech-item">RAG System</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Developed by Students of Ramco Institute of Technology – RAAM Techlink Internship</p>
+            <p class="copyright">© 2024 DoseRight. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
