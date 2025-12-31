@@ -19,9 +19,8 @@ app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'webp'}
 app.config['DATABASE'] = 'doseright.db'
 
 # Configure Gemini AI
-YOUR_API_KEY = "AIzaSyAEEw3cSTtngMxwirSi8JpTFEY_VBldzCA"
-genai.configure(api_key=YOUR_API_KEY)
-model = genai.GenerativeModel('gemini-2.5-flash')
+genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
+model = genai.GenerativeModel("gemini-2.5-flash")
 
 # Register authentication blueprint
 app.register_blueprint(auth_bp)
@@ -515,6 +514,7 @@ if __name__ == '__main__':
     print("🚀 Starting DoseRight...")
 
     app.run(debug=True, port=5000)
+
 
 
 
