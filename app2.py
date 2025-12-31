@@ -19,7 +19,7 @@ app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'webp'}
 app.config['DATABASE'] = 'doseright.db'
 
 # Configure Gemini AI
-YOUR_API_KEY = "AIzaSyC-hGhRHqLHFx7pWgBD2y9BnkKCPYT1Z_U"
+YOUR_API_KEY = "AIzaSyDN1AO5j6njj6WxOUrrwA8lfeMoSX6qNAE"
 genai.configure(api_key=YOUR_API_KEY)
 model = genai.GenerativeModel('gemini-2.5-flash')
 
@@ -513,4 +513,5 @@ def init_database():
 if __name__ == '__main__':
     init_database()
     print("🚀 Starting DoseRight...")
+
     app.run(debug=True, port=5000)
